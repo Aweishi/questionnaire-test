@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trendforce Unsubscribe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            color: #495057;
+        }
+
+        .bg-color {
+            background-color: #F9FAFB;
+        }
+
+        .bg-brand {
+            background-color: #88CC22 !important;
+        }
+
+        .text-brand {
+            color: #88CC22;
+        }
+
+        .custom-checkbox input:checked {
+            background-color: #88cc22 !important;
+            border-color: #88CC22 !important;
+
+        }
+
+        .custom-checkbox input:focus {
+            box-shadow: 0 0 0 0.2rem rgba(136, 204, 34, 0.5);
+        }
+
+        .custom-textarea textarea:focus {
+            box-shadow: 0 0 0 0.2rem rgba(136, 204, 34, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-color my-5">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-10 mx-auto text-center ">
+                <img src="./image/mailbox.svg" alt="" style="width:30%">
+
+                <div class="col-md-10 mx-auto text-center">
+                    <h2 class="text-brand display-6 fw-bold">Are you sure you want to say goodbye ?</h2>
+                    <p>We regret to hear that you wish to unsubscribe. We would appreciate it if
+                        you could assist us by providing the reason for your cancellation, so that we can make
+                        improvements in the future.</p>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- 問券開始 -->
+        <div class="row ">
+            <form class="col-md-10 bg-white rounded-3 border p-3 p-md-5 mx-auto shadow" id="myForm">
+                <h5 class="mb-3">Reason to cancellation (multiple choice):</h5>
+                <!-- question1 -->
+                <div class="form-check custom-checkbox mb-3">
+                    <input class=" form-check-input " type="checkbox" value="" id="question1">
+                    <label class="form-check-label custom-control-label" for="question1">
+                        1. The content did not meet expectations.
+                    </label>
+                </div>
+                <!-- question2 -->
+                <div class="form-check custom-checkbox mb-3">
+                    <div class="mb-2">
+                        <input class="form-check-input outerCheckbox" type="checkbox" value="" id="question2">
+                        <label class="form-check-label " for="question2">
+                            2. The content was uninteresting.
+                        </label>
+                    </div>
+
+                    <div class="ms-3">
+                        <p class="mb-1">Industries or topics that you are interested in :</p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option1">
+                            <label class="form-check-label " for="option1">
+                                Semiconductors
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option2">
+                            <label class="form-check-label" for="option2">
+                                Display
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option3">
+                            <label class="form-check-label" for="option3">
+                                Energy
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option4">
+                            <label class="form-check-label" for="option4">
+                                Consumer Electronics
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option5">
+                            <label class="form-check-label" for="option5">
+                                Telecommunications
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option6">
+                            <label class="form-check-label" for="option6">
+                                LED
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option7">
+                            <label class="form-check-label" for="option7">
+                                Emerging Technologies
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option8">
+                            <label class="form-check-label" for="option8">
+                                Others
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- question3 -->
+                <div class="form-check custom-checkbox mb-3">
+                    <input class="form-check-input outerCheckbox_2 " type="checkbox" value="" id="question3">
+                    <label class="form-check-label mb-3" for="question3">
+                        3. Which media outlet provides industry news content that you prefer more?
+                    </label>
+                    <div class="row">
+                        <div class="col d-flex align-items-center ">
+                            <p class="mb-0 me-2">e.g.,</p>
+                            <input class="form-control innerInput" type="text" placeholder="media name"
+                                aria-label="media name" required>
+                        </div>
+                    </div>
+                </div>
+                <!-- question4 -->
+                <div class="form-check custom-checkbox">
+                    <input class="form-check-input outerCheckbox_3" type="checkbox" value="" id="question4">
+                    <label class="form-check-label mb-3" for="question4">
+                        4.Do you have any specific suggestions for improvement?
+                    </label>
+                    <div class="mb-3 custom-textarea">
+                        <textarea class="form-control innerTextarea" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="btn bg-brand text-white w-100 " type="submit" id="btnSubmit">Send</div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //內層checkbox被checked，外層checkbox自動被checked
+        document.addEventListener('DOMContentLoaded', function () {
+            const outerCheckbox = document.querySelector('.outerCheckbox');
+            const innerCheckboxes = document.querySelectorAll('.innerCheckbox');
+
+            innerCheckboxes.forEach(function (innerCheckbox) {
+                innerCheckbox.addEventListener('change', function () {
+                    outerCheckbox.checked = Array.from(innerCheckboxes).some(function (checkbox) {
+                        return checkbox.checked;
+                    });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const outerCheckbox2 = document.querySelector('.outerCheckbox_2');
+            const innerInput = document.querySelector('.innerInput');
+            const outerCheckbox3 = document.querySelector('.outerCheckbox_3');
+            const innerInput2 = document.querySelector('.innerInput_2');
+
+            innerInput.addEventListener('input', function () {
+                outerCheckbox2.checked = innerInput.value.trim() !== '';
+                innerInput.required = outerCheckbox2.checked;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const outerCheckbox3 = document.querySelector('.outerCheckbox_3');
+            const innerTextarea = document.querySelector('.innerTextarea');
+
+
+            innerTextarea.addEventListener('input', function () {
+                outerCheckbox3.checked = innerTextarea.value.trim() !== '';
+                innerInput2.required = outerCheckbox3.checked;
+            })
+        });
+
+
+
+
+        document.getElementById('btnSubmit').addEventListener('click', function () {
+            // 导向到a.html页面
+            window.location.href = 'unsubscribe_succesful.html';
+        });
+
+
+
+
+    </script>
+
+    <script>
+        document.getElementById('redirectButton').addEventListener('click', function () {
+            // 导向到a.html页面
+            window.location.href = 'a.html';
+        });
+    </script>
+
+</body>
+
+</html>
