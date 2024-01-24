@@ -37,6 +37,18 @@
         .custom-textarea textarea:focus {
             box-shadow: 0 0 0 0.2rem rgba(136, 204, 34, 0.5);
         }
+
+        @media screen and (min-width: 768px) {
+            .main-pic{
+                width:30%;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .main-pic{
+                width:50%;
+            }
+        }
+
     </style>
 </head>
 
@@ -44,7 +56,7 @@
     <div class="container ">
         <div class="row ">
             <div class="col-md-10 mx-auto text-center ">
-                <img src="./image/mailbox.svg" alt="" style="width:30%">
+                <img src="./image/mailbox.svg" alt="" class="main-pic" >
 
                 <div class="col-md-10 mx-auto text-center">
                     <h2 class="text-brand display-6 fw-bold">Are you sure you want to say goodbye ?</h2>
@@ -62,7 +74,7 @@
                 <h5 class="mb-3">Reason to cancellation (multiple choice):</h5>
                 <!-- question1 -->
                 <div class="form-check custom-checkbox py-3 border-bottom">
-                    <input class=" form-check-input me-4 " type="checkbox" value="" id="question1">
+                    <input class=" form-check-input me-md-4 " type="checkbox" value="" id="question1">
                     <label class="form-check-label custom-control-label" for="question1">
                         1. The content did not meet expectations.
                     </label>
@@ -70,7 +82,7 @@
                 <!-- question2 -->
                 <div class="form-check custom-checkbox py-3 border-bottom">
                     <div class="mb-1">
-                        <input class="form-check-input outerCheckbox me-4" type="checkbox" value="" id="question2">
+                        <input class="form-check-input outerCheckbox me-md-4" type="checkbox" value="" id="question2">
                         <label class="form-check-label  " for="question2">
                             2. The content was uninteresting.
                         </label>
@@ -130,16 +142,16 @@
                 </div>
                 <!-- question3 -->
                 <div class="form-check custom-checkbox  py-3 border-bottom">
-                    <input class="form-check-input outerCheckbox_2 me-4 " type="checkbox" value="" id="question3">
+                    <input class="form-check-input outerCheckbox_2 me-md-4 " type="checkbox" value="" id="question3">
                     <label class="form-check-label mb-3" for="question3">
                         3. Which media outlet provides industry news content that you prefer more?
                     </label>
                     <div class="row">
                         <div class="col ">
-                            <div class=" d-flex align-items-center ms-4">
+                            <div class=" d-flex align-items-center ms-md-4">
                                 <p class="mb-0 me-2">e.g.,</p>
                                 <input class="form-control innerInput" type="text" placeholder="media name"
-                                    aria-label="media name" required>
+                                    aria-label="media name" style="background-color: #F9FAFB;">
                             </div>
                           
                         </div>
@@ -147,12 +159,12 @@
                 </div>
                 <!-- question4 -->
                 <div class="form-check custom-checkbox py-3 ">
-                    <input class="form-check-input outerCheckbox_3 me-4" type="checkbox" value="" id="question4">
+                    <input class="form-check-input outerCheckbox_3 me-md-4" type="checkbox" value="" id="question4">
                     <label class="form-check-label mb-3" for="question4">
                         4. Do you have any specific suggestions for improvement?
                     </label>
-                    <div class="mb-3 ms-4 custom-textarea">
-                        <textarea class="form-control innerTextarea" placeholder="Write your comment" rows="5"></textarea>
+                    <div class="mb-3 ms-md-4 custom-textarea">
+                        <textarea class="form-control innerTextarea" placeholder="Write your comment" rows="5" style="background-color: #f9fafb;"></textarea>
                     </div>
                 </div>
 
