@@ -39,16 +39,16 @@
         }
 
         @media screen and (min-width: 768px) {
-            .main-pic{
-                width:30%;
-            }
-        }
-        @media screen and (max-width: 768px) {
-            .main-pic{
-                width:50%;
+            .main-pic {
+                width: 30%;
             }
         }
 
+        @media screen and (max-width: 768px) {
+            .main-pic {
+                width: 50%;
+            }
+        }
     </style>
 </head>
 
@@ -56,10 +56,10 @@
     <div class="container ">
         <div class="row ">
             <div class="col-md-10 mx-auto text-center ">
-                <img src="./image/mailbox.svg" alt="" class="main-pic" >
+                <img src="./image/mailbox.svg" alt="" class="main-pic mb-3">
 
-                <div class="col-md-10 mx-auto text-center">
-                    <h2 class="text-brand display-6 fw-bold">Are you sure you want to say goodbye ?</h2>
+                <div class="col-md-10 mx-auto text-center mb-5">
+                    <h2 class="text-brand display-6 fw-bold">Please make sure you want to unsbscribe</h2>
                     <p>We regret to hear that you wish to unsubscribe. We would appreciate it if
                         you could assist us by providing the reason for your cancellation, so that we can make
                         improvements in the future.</p>
@@ -144,16 +144,18 @@
                 <div class="form-check custom-checkbox  py-3 border-bottom">
                     <input class="form-check-input outerCheckbox_2 me-md-4 " type="checkbox" value="" id="question3">
                     <label class="form-check-label mb-3" for="question3">
-                        3. Which media outlet provides industry news content that you prefer more?
+                        3. I prefer industry news content from a different media outlet:
                     </label>
                     <div class="row">
                         <div class="col ">
                             <div class=" d-flex align-items-center ms-md-4">
                                 <p class="mb-0 me-2">e.g.,</p>
-                                <input class="form-control innerInput" type="text" placeholder="media name"
-                                    aria-label="media name" style="background-color: #F9FAFB;">
+                                <input class="form-control innerInput" id="inputField" type="text"
+                                    placeholder="media name" aria-label="media name" style="background-color: #F9FAFB;"
+                                    maxlength="200">
+
                             </div>
-                          
+                            <div id="charCount" style="text-align:right;font-size:12px; margin-top:4px;">0 / 200</div>
                         </div>
                     </div>
                 </div>
@@ -161,10 +163,12 @@
                 <div class="form-check custom-checkbox py-3 ">
                     <input class="form-check-input outerCheckbox_3 me-md-4" type="checkbox" value="" id="question4">
                     <label class="form-check-label mb-3" for="question4">
-                        4. Do you have any specific suggestions for improvement?
+                        4. Other
                     </label>
                     <div class="mb-3 ms-md-4 custom-textarea">
-                        <textarea class="form-control innerTextarea" placeholder="Write your comment" rows="5" style="background-color: #f9fafb;"></textarea>
+                        <textarea class="form-control innerTextarea" id="textareaField" placeholder="Write your comment" rows="3"
+                            style="background-color: #f9fafb; resize: none;" maxlength="200"></textarea>
+                            <div id="charCountTextarea" style="text-align:right;font-size:12px; margin-top:4px;">0 / 200</div>
                     </div>
                 </div>
 
@@ -197,7 +201,7 @@
             const outerCheckbox2 = document.querySelector('.outerCheckbox_2');
             const innerInput = document.querySelector('.innerInput');
             const outerCheckbox3 = document.querySelector('.outerCheckbox_3');
-            const innerInput2 = document.querySelector('.innerInput_2');
+       
 
             innerInput.addEventListener('input', function () {
                 outerCheckbox2.checked = innerInput.value.trim() !== '';
@@ -212,29 +216,48 @@
 
             innerTextarea.addEventListener('input', function () {
                 outerCheckbox3.checked = innerTextarea.value.trim() !== '';
-                innerInput2.required = outerCheckbox3.checked;
+              
             })
         });
 
 
 
-
+        //導向訂閱成功頁
         document.getElementById('btnSubmit').addEventListener('click', function () {
-            // 导向到a.html页面
             window.location.href = 'unsubscribe_succesful.html';
         });
 
+        //字數計算
+        const inputField = document.getElementById('inputField');
+       
+        const charCount = document.getElementById('charCount');
+       
+
+        // 監聽輸入事件
+        inputField.addEventListener('input', updateCharCount);
+       
+        // 更新字數統計
+        function updateCharCount() {
+            
+            const currentCount = inputField.value.length;
+            console.log(currentCount);
+            charCount.textContent = `${currentCount} / 200`;
+        }
 
 
+
+        const textareaField = document.getElementById('textareaField');
+        const charCountTextarea = document.getElementById('charCountTextarea');
+        textareaField.addEventListener('input', updateCountTextarea);
+        function updateCountTextarea(){
+            const currentCount2 = textareaField.value.length;
+            console.log(currentCount2);
+            charCountTextarea.textContent = `${currentCount2}/ 200`;
+        }
 
     </script>
 
-    <script>
-        document.getElementById('redirectButton').addEventListener('click', function () {
-            // 导向到a.html页面
-            window.location.href = 'a.html';
-        });
-    </script>
+   
 
 </body>
 
