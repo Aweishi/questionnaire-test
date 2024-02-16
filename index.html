@@ -186,18 +186,18 @@
 
     <script>
         //內層checkbox被checked，外層checkbox自動被checked
-        document.addEventListener('DOMContentLoaded', function () {
-            const outerCheckbox = document.querySelector('.outerCheckbox');
-            const innerCheckboxes = document.querySelectorAll('.innerCheckbox');
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const outerCheckbox = document.querySelector('.outerCheckbox');
+        //     const innerCheckboxes = document.querySelectorAll('.innerCheckbox');
 
-            innerCheckboxes.forEach(function (innerCheckbox) {
-                innerCheckbox.addEventListener('change', function () {
-                    outerCheckbox.checked = Array.from(innerCheckboxes).some(function (checkbox) {
-                        return checkbox.checked;
-                    });
-                });
-            });
-        });
+        //     innerCheckboxes.forEach(function (innerCheckbox) {
+        //         innerCheckbox.addEventListener('change', function () {
+        //             outerCheckbox.checked = Array.from(innerCheckboxes).some(function (checkbox) {
+        //                 return checkbox.checked;
+        //             });
+        //         });
+        //     });
+        // });
 
         document.addEventListener('DOMContentLoaded', function () {
             const outerCheckbox2 = document.querySelector('.outerCheckbox_2');
