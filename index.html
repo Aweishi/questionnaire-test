@@ -7,6 +7,7 @@
     <title>Trendforce Unsubscribe</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <style>
         body {
             color: #495057;
@@ -81,15 +82,15 @@
                 </div>
                 <!-- question2 -->
                 <div class="form-check custom-checkbox py-3 border-bottom">
-                    <div class="mb-1">
+                    <div class="mb-3">
                         <input class="form-check-input outerCheckbox me-md-4" type="checkbox" value="" id="question2">
                         <label class="form-check-label  " for="question2">
                             2. The content was uninteresting.
                         </label>
                     </div>
 
-                    <div class="ms-4">
-                        <p class="mb-1">Industries or topics that you are interested in :</p>
+                    <div class="ms-4 p-3 bg-light border rounded" id="question2Sub">
+                        <p class="mb-1 fw-bold">Industries or topics that you are interested in :</p>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input innerCheckbox" type="checkbox" value="" id="option1">
                             <label class="form-check-label " for="option1">
@@ -166,9 +167,10 @@
                         4. Other
                     </label>
                     <div class="mb-3 ms-md-4 custom-textarea">
-                        <textarea class="form-control innerTextarea" id="textareaField" placeholder="Write your comment" rows="3"
-                            style="background-color: #f9fafb; resize: none;" maxlength="200"></textarea>
-                            <div id="charCountTextarea" style="text-align:right;font-size:12px; margin-top:4px;">0 / 200</div>
+                        <textarea class="form-control innerTextarea" id="textareaField" placeholder="Write your comment"
+                            rows="3" style="background-color: #f9fafb; resize: none;" maxlength="200"></textarea>
+                        <div id="charCountTextarea" style="text-align:right;font-size:12px; margin-top:4px;">0 / 200
+                        </div>
                     </div>
                 </div>
 
@@ -201,7 +203,7 @@
             const outerCheckbox2 = document.querySelector('.outerCheckbox_2');
             const innerInput = document.querySelector('.innerInput');
             const outerCheckbox3 = document.querySelector('.outerCheckbox_3');
-       
+
 
             innerInput.addEventListener('input', function () {
                 outerCheckbox2.checked = innerInput.value.trim() !== '';
@@ -216,7 +218,7 @@
 
             innerTextarea.addEventListener('input', function () {
                 outerCheckbox3.checked = innerTextarea.value.trim() !== '';
-              
+
             })
         });
 
@@ -229,16 +231,16 @@
 
         //字數計算
         const inputField = document.getElementById('inputField');
-       
+
         const charCount = document.getElementById('charCount');
-       
+
 
         // 監聽輸入事件
         inputField.addEventListener('input', updateCharCount);
-       
+
         // 更新字數統計
         function updateCharCount() {
-            
+
             const currentCount = inputField.value.length;
             console.log(currentCount);
             charCount.textContent = `${currentCount} / 200`;
@@ -249,15 +251,41 @@
         const textareaField = document.getElementById('textareaField');
         const charCountTextarea = document.getElementById('charCountTextarea');
         textareaField.addEventListener('input', updateCountTextarea);
-        function updateCountTextarea(){
+        function updateCountTextarea() {
             const currentCount2 = textareaField.value.length;
             console.log(currentCount2);
             charCountTextarea.textContent = `${currentCount2}/ 200`;
         }
 
+        // 第二題若被打勾，才會出現子題
+        document.addEventListener('DOMContentLoaded', function () {
+        const question2Checkbox = document.getElementById('question2');
+        const question2SubDiv = document.getElementById('question2Sub');
+        const innerCheckboxes = question2SubDiv.querySelectorAll('.innerCheckbox');
+
+        question2Checkbox.addEventListener('change', function () {
+            if (question2Checkbox.checked) {
+                question2SubDiv.style.display = 'block';
+            } else {
+                question2SubDiv.style.display = 'none';
+                innerCheckboxes.forEach(function (checkbox) {
+                    checkbox.checked = false;
+                });
+            }
+        });
+
+        // 初始状态检查
+        if (question2Checkbox.checked) {
+            question2SubDiv.style.display = 'block';
+        } else {
+            question2SubDiv.style.display = 'none';
+           
+        }
+    });
+
     </script>
 
-   
+
 
 </body>
 
